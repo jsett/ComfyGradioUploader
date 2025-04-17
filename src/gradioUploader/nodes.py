@@ -35,8 +35,6 @@ class GradioUploader:
         from PIL import Image
         import numpy as np
 
-        print("=============== gradio uploading ==========")
-
         url = url.rstrip('/')
 
         for idx, image2 in enumerate(image):
@@ -63,12 +61,8 @@ class GradioUploader:
             files = {"files": fp}
 
             response = requests.post(full_url, params=params, headers=headers, files=files)
-            print(response.text)
 
             uploadpath = response.json()[0]
-
-
-            time.sleep(2)
 
             full_url = f"{url}/gradio_api/upload_progress"
 
@@ -82,7 +76,6 @@ class GradioUploader:
             }
 
             response = requests.get(full_url, params=params, headers=headers, cookies=None)
-            print(response.text)
 
             full_url = f"{url}/gradio_api/queue/join?"
             headers = {
@@ -111,7 +104,6 @@ class GradioUploader:
             }
 
             response = requests.post(full_url, headers=headers, data=json.dumps(data))
-            print(response.text)
 
         return ("Done",)
 
