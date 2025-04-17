@@ -14,6 +14,10 @@ class GradioUploader:
                     "multiline": False,
                     "default": ""
                 }),
+                "folder": ("STRING", {
+                    "multiline": False,
+                    "default": ""
+                }),
             },
         }
 
@@ -25,7 +29,7 @@ class GradioUploader:
 
     CATEGORY = "GradioUploader"
 
-    def upload(self, image, url):
+    def upload(self, image, url, folder):
         from io import BytesIO
         import requests
         import time
@@ -95,7 +99,8 @@ class GradioUploader:
                         "orig_name": "min.txt",
                         "mime_type": "image/png",
                         "meta": {"_type": "gradio.FileData"}
-                    }
+                    },
+                    folder
                 ],
                 "event_data": None,
                 "fn_index": 0,
