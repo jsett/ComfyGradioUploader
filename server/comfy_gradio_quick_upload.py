@@ -6,7 +6,12 @@ import uuid
 
 def upload_file(file, folder_name):
     hex_uuid = uuid.uuid4().hex
-    dir_path = os.getcwd()
+    if folder_name == "":
+        dir_path = os.getcwd()
+    else:
+        dir_path = os.path.join(os.getcwd(), folder_name)
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
     shutil.copy2(file.name, os.path.join(dir_path, hex_uuid + "_" + os.path.basename(file.name)))
     return "File uploaded successfully!"
 
