@@ -1,0 +1,211 @@
+{
+  "id": "114c3fe0-a63f-44cc-ac98-257a3c6de55c",
+  "revision": 0,
+  "last_node_id": 4,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "WD14Tagger|pysssss",
+      "pos": [
+        1292.3743896484375,
+        367.55841064453125
+      ],
+      "size": [
+        330,
+        178
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-wd14-tagger",
+        "ver": "1.0.0",
+        "Node name for S&R": "WD14Tagger|pysssss"
+      },
+      "widgets_values": [
+        "wd-v1-4-moat-tagger-v2",
+        0.35,
+        0.85,
+        false,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoRA Caption Load",
+      "pos": [
+        744.1159057617188,
+        621.0875244140625
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Name list",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "path",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "Image list",
+          "type": "IMAGE",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "Image-Captioning-in-ComfyUI",
+        "ver": "9b24deea8eef830da059aa91cac9690ecde19fda",
+        "Node name for S&R": "LoRA Caption Load"
+      },
+      "widgets_values": [
+        "/tmp/caption/1_ytbrookty"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LoRA Caption Save",
+      "pos": [
+        1806.09912109375,
+        630.1791381835938
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "namelist",
+          "type": "STRING",
+          "link": 1
+        },
+        {
+          "name": "path",
+          "type": "STRING",
+          "link": 2
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "Image-Captioning-in-ComfyUI",
+        "ver": "9b24deea8eef830da059aa91cac9690ecde19fda",
+        "Node name for S&R": "LoRA Caption Save"
+      },
+      "widgets_values": [
+        "ytbrookty"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Note",
+      "pos": [
+        762.0751342773438,
+        273.6350402832031
+      ],
+      "size": [
+        393,
+        148
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "https://thundaxsoftware.blogspot.com/2024/08/train-your-own-lora-with-comfyui-step.html"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      2,
+      1,
+      3,
+      1,
+      "STRING"
+    ],
+    [
+      3,
+      1,
+      0,
+      3,
+      2,
+      "STRING"
+    ],
+    [
+      4,
+      2,
+      2,
+      1,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        -677.3750457309684,
+        -155.93494985028744
+      ]
+    },
+    "frontendVersion": "1.17.11"
+  },
+  "version": 0.4
+}

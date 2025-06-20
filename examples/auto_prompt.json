@@ -1,0 +1,881 @@
+{
+  "id": "541316f8-975b-4ae9-8e30-46c97cf64827",
+  "revision": 0,
+  "last_node_id": 138,
+  "last_link_id": 199,
+  "nodes": [
+    {
+      "id": 130,
+      "type": "Logic Boolean",
+      "pos": [
+        -490,
+        -290
+      ],
+      "size": [
+        210,
+        118
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "name": "NUMBER",
+          "type": "NUMBER",
+          "links": [
+            189
+          ]
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Logic Boolean"
+      },
+      "widgets_values": [
+        0
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 129,
+      "type": "Number to String",
+      "pos": [
+        138.9000244140625,
+        -37.20014953613281
+      ],
+      "size": [
+        170,
+        30
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "number",
+          "type": "NUMBER",
+          "link": 187
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            188
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Number to String"
+      },
+      "widgets_values": [],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 117,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -673.7996215820312,
+        95.3000259399414
+      ],
+      "size": [
+        300,
+        100
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            175
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            184,
+            185
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            190
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0.safetensors"
+      ]
+    },
+    {
+      "id": 122,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -160,
+        180
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 185
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            179
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 76,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1046.909423828125,
+        -339.45440673828125
+      ],
+      "size": [
+        310,
+        150
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 193
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.3",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "a photo of a victorian of woman, portrait, closeup, blonde hair, mountain nature, blue sky 1girl, solo, long_hair, looking_at_viewer, brown_hair, dress, cleavage, bare_shoulders, sitting, jewelry, closed_mouth, collarbone, earrings, thighs, day, indoors, necklace, lips, head_tilt, legs, bare_arms, bare_legs, window, copyright_name, makeup, sleeveless_dress, watermark, short_dress, lingerie, lipstick, crossed_legs, plant, animal_print, couch, eyeshadow, nose, photo_(medium), logo, spaghetti_strap, knees, print_dress, leopard_print"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 119,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -160,
+        70
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 184
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 194
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            176
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 128,
+      "type": "ShowText|pysssss",
+      "pos": [
+        879.3600463867188,
+        -99.49998474121094
+      ],
+      "size": [
+        310,
+        112
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 188
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.3",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "5"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 131,
+      "type": "Text Concatenate",
+      "pos": [
+        384.3500061035156,
+        -301.30438232421875
+      ],
+      "size": [
+        315,
+        178
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 191
+        },
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 192
+        },
+        {
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            193,
+            194
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        " ",
+        "true"
+      ]
+    },
+    {
+      "id": 123,
+      "type": "EmptyLatentImage",
+      "pos": [
+        -160,
+        310
+      ],
+      "size": [
+        210,
+        110
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            180
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 118,
+      "type": "KSampler",
+      "pos": [
+        80,
+        70
+      ],
+      "size": [
+        320,
+        474
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 175
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 176
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 179
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 180
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            181
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1063129343130291,
+        "randomize",
+        25,
+        5,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 75,
+      "type": "Text Load Line From File",
+      "pos": [
+        22.272735595703125,
+        -301.818115234375
+      ],
+      "size": [
+        320,
+        198
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "multiline_text",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "widget": {
+            "name": "index"
+          },
+          "link": 142
+        }
+      ],
+      "outputs": [
+        {
+          "name": "line_text",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            192
+          ]
+        },
+        {
+          "name": "dictionary",
+          "type": "DICT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Text Load Line From File"
+      },
+      "widgets_values": [
+        "/tmp/prompts.txt",
+        "0",
+        "TextBatch",
+        "index",
+        0
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 82,
+      "type": "Number Counter",
+      "pos": [
+        -245,
+        -290
+      ],
+      "size": [
+        240,
+        194
+      ],
+      "flags": {
+        "pinned": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "reset_bool",
+          "shape": 7,
+          "type": "NUMBER",
+          "link": 189
+        }
+      ],
+      "outputs": [
+        {
+          "name": "number",
+          "type": "NUMBER",
+          "slot_index": 0,
+          "links": [
+            187
+          ]
+        },
+        {
+          "name": "float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "int",
+          "type": "INT",
+          "slot_index": 2,
+          "links": [
+            142
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-node-suite-comfyui",
+        "ver": "1.0.2",
+        "Node name for S&R": "Number Counter"
+      },
+      "widgets_values": [
+        "integer",
+        "increment",
+        0,
+        120.00000000000003,
+        1
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 124,
+      "type": "VAEDecode",
+      "pos": [
+        440,
+        70
+      ],
+      "size": [
+        140,
+        50
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 181
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 190
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            199
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 138,
+      "type": "GradioUploader",
+      "pos": [
+        763.8048095703125,
+        99.82671356201172
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 199
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Status",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "jsett/ComfyGradioUploader",
+        "ver": "72565cdc9ab2ef32745d2f4f2b627845928a4e43",
+        "Node name for S&R": "GradioUploader"
+      },
+      "widgets_values": [
+        "",
+        "mix"
+      ]
+    },
+    {
+      "id": 132,
+      "type": "PrimitiveNode",
+      "pos": [
+        128.14089965820312,
+        -463.3536376953125
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "text_a"
+          },
+          "links": [
+            191
+          ]
+        }
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        "a photo of "
+      ]
+    }
+  ],
+  "links": [
+    [
+      142,
+      82,
+      2,
+      75,
+      1,
+      "INT"
+    ],
+    [
+      175,
+      117,
+      0,
+      118,
+      0,
+      "MODEL"
+    ],
+    [
+      176,
+      119,
+      0,
+      118,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      179,
+      122,
+      0,
+      118,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      180,
+      123,
+      0,
+      118,
+      3,
+      "LATENT"
+    ],
+    [
+      181,
+      118,
+      0,
+      124,
+      0,
+      "LATENT"
+    ],
+    [
+      184,
+      117,
+      1,
+      119,
+      0,
+      "CLIP"
+    ],
+    [
+      185,
+      117,
+      1,
+      122,
+      0,
+      "CLIP"
+    ],
+    [
+      187,
+      82,
+      0,
+      129,
+      0,
+      "NUMBER"
+    ],
+    [
+      188,
+      129,
+      0,
+      128,
+      0,
+      "STRING"
+    ],
+    [
+      189,
+      130,
+      1,
+      82,
+      0,
+      "NUMBER"
+    ],
+    [
+      190,
+      117,
+      2,
+      124,
+      1,
+      "VAE"
+    ],
+    [
+      191,
+      132,
+      0,
+      131,
+      0,
+      "STRING"
+    ],
+    [
+      192,
+      75,
+      0,
+      131,
+      1,
+      "STRING"
+    ],
+    [
+      193,
+      131,
+      0,
+      76,
+      0,
+      "STRING"
+    ],
+    [
+      194,
+      131,
+      0,
+      119,
+      1,
+      "STRING"
+    ],
+    [
+      199,
+      124,
+      0,
+      138,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Load Prompt from File",
+      "bounding": [
+        -510,
+        -380,
+        1361.199951171875,
+        386.2099914550781
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7513148009015777,
+      "offset": [
+        669.1766545454554,
+        670.4164999999999
+      ]
+    },
+    "ue_links": [],
+    "frontendVersion": "1.16.8"
+  },
+  "version": 0.4
+}

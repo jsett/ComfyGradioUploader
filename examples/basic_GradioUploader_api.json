@@ -1,0 +1,108 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 972119978758314,
+      "steps": 25,
+      "cfg": 5.5,
+      "sampler_name": "dpmpp_2m_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sd_xl_base_1.0.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 768,
+      "height": 1344,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "a photo of A stunning, vibrant outdoor portrait of a young woman in a bright bubblegum pink halter bikini top and matching bikini bottoms, holding one arm up with her hand covering her eyes. She has light blonde, wavy hair, fair skin, and is wearing sunglasses. The background is a modern hotel with clean lines and pale neutral walls, surrounded by lush green palm trees and tropical foliage. Bright, even sunlight. Low angle shot, emphasizing her toned physique. High detail, cinematic lighting, professional photography, fashion editorial style, 8k, hyperrealistic, trending on artstation. --ar 3:2 --style expressive --zoom 1.2",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "10": {
+    "inputs": {
+      "url": "https://de40068da1a8eda25f.gradio.live/",
+      "folder": "a1",
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "GradioUploader",
+    "_meta": {
+      "title": "Gradio Uploader"
+    }
+  }
+}
