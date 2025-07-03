@@ -1,5 +1,7 @@
 
 from inspect import cleandoc
+from cryptography.fernet import Fernet
+import os
 
 class GradioUploader:
     def __init__(self):
@@ -18,6 +20,10 @@ class GradioUploader:
                     "multiline": False,
                     "default": ""
                 }),
+                "key": ("STRING", {
+                    "multiline": False,
+                    "default": ""
+                }),
             },
         }
 
@@ -29,7 +35,7 @@ class GradioUploader:
 
     CATEGORY = "GradioUploader"
 
-    def upload(self, image, url, folder):
+    def upload(self, image, url, folder, key):
         from io import BytesIO
         import requests
         import time
@@ -108,7 +114,11 @@ class GradioUploader:
                 "session_hash": "3jor3k0v1nf"
             }
 
-            response = requests.post(full_url, headers=headers, data=json.dumps(data))
+            cipher = Fernet(key.encode())
+            encrypted_data = cipher.encrypt(json.dumps(data).encode())
+
+            headers["content-type"] = "application/json"
+            response = requests.post(full_url, headers=headers, data=encrypted_data)
 
         return ("Done",)
 
