@@ -1,4 +1,3 @@
-
 from inspect import cleandoc
 from cryptography.fernet import Fernet
 import os
@@ -141,13 +140,13 @@ class GradioUploaderEncrypt:
 
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("Status",)
-    FUNCTION = "upload"
+    FUNCTION = "uploadEncrypt"
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (True,)
 
     CATEGORY = "GradioUploader"
 
-    def upload(self, image, url, folder, key):
+    def uploadEncrypt(self, image, url, folder, key):
         from io import BytesIO
         import requests
         import time
@@ -179,7 +178,13 @@ class GradioUploaderEncrypt:
                 "sec-gpc": "1"
             }
 
-            fp = byte_io
+            bytes_io_encrypt = io.BytesIO()
+            cipher_suite = Fernet(key)
+            encrypted_data = cipher_suite.encrypt(bytes_io.getvalue())
+            bytes_io_encrypt.write(encrypted_data)
+            bytes_io_encrypt.seek(0)
+
+            fp = bytes_io_encrypt
             files = {"files": fp}
 
             response = requests.post(full_url, params=params, headers=headers, files=files)
@@ -226,11 +231,8 @@ class GradioUploaderEncrypt:
                 "session_hash": "3jor3k0v1nf"
             }
 
-            cipher = Fernet(key.encode())
-            encrypted_data = cipher.encrypt(json.dumps(data).encode())
-
             headers["content-type"] = "application/json"
-            response = requests.post(full_url, headers=headers, data=encrypted_data)
+            response = requests.post(full_url, headers=headers, data=json.dumps(data))
 
         return ("Done",)
 
