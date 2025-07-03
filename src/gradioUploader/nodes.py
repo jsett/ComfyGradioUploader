@@ -161,9 +161,9 @@ class GradioUploaderEncrypt:
         for idx, image2 in enumerate(image):
             i = 255. * image2.cpu().numpy()
             img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
-            byte_io = BytesIO()
-            img.save(byte_io, 'png')
-            byte_io.seek(0)
+            bytes_io = BytesIO()
+            img.save(bytes_io, 'png')
+            bytes_io.seek(0)
 
             site = url
 
